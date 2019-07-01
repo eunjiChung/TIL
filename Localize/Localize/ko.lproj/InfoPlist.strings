@@ -1,0 +1,13 @@
+/*
+  -> 앱 제목을 한글로 바꾸기 위한 파일
+  파일 제목이 반드시 이렇게 되어야 함 (info.plist 파일에서 바꾸는건 훼이크)
+  -> Localize 후
+ 
+  InfoPlist.strings
+  Localize
+
+  Created by CHUNGEUNJI on 2018. 2. 12..
+  Copyright © 2018년 CHUNGEUNJI. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "로컬";

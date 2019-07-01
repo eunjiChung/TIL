@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NewProj1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wro-Mb-64p">
+                                <rect key="frame" x="16" y="33" width="343" height="2"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVD-NV-VJu">
+                                <rect key="frame" x="16" y="74" width="343" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="GxN-vV-Ozw"/>
+                                    <constraint firstAttribute="width" constant="343" id="yEr-Yt-mJI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJA-Pt-Vpt">
+                                <rect key="frame" x="50" y="160" width="39" height="30"/>
+                                <state key="normal" title="STOP"/>
+                                <connections>
+                                    <action selector="stop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Fk-LN-8wQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5se-aD-Kll">
+                                <rect key="frame" x="288" y="160" width="47" height="30"/>
+                                <state key="normal" title="START"/>
+                                <connections>
+                                    <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JmM-3L-dVI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5se-aD-Kll" secondAttribute="trailing" constant="41" id="2c9-yP-aBe"/>
+                            <constraint firstItem="5se-aD-Kll" firstAttribute="top" secondItem="EVD-NV-VJu" secondAttribute="bottom" constant="17" id="6se-YG-Eor"/>
+                            <constraint firstItem="sJA-Pt-Vpt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="46" id="8Lx-hT-5mV"/>
+                            <constraint firstItem="wro-Mb-64p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Dcr-j8-5Ig"/>
+                            <constraint firstItem="EVD-NV-VJu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Q01-lJ-xAS"/>
+                            <constraint firstItem="EVD-NV-VJu" firstAttribute="top" secondItem="wro-Mb-64p" secondAttribute="bottom" constant="39" id="Qzh-ui-JLU"/>
+                            <constraint firstItem="sJA-Pt-Vpt" firstAttribute="top" secondItem="EVD-NV-VJu" secondAttribute="bottom" constant="17" id="Xxc-pP-hdP"/>
+                            <constraint firstItem="wro-Mb-64p" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="bCR-ha-veD"/>
+                            <constraint firstItem="wro-Mb-64p" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="p86-3B-sRo"/>
+                            <constraint firstItem="5se-aD-Kll" firstAttribute="leading" secondItem="sJA-Pt-Vpt" secondAttribute="trailing" constant="196" id="syS-vJ-2SO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EVD-NV-VJu" secondAttribute="trailing" constant="16" id="w9X-6b-mKe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="EVD-NV-VJu" id="hHX-3Z-xOI"/>
+                        <outlet property="progressView" destination="wro-Mb-64p" id="FKu-Ct-6ug"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>

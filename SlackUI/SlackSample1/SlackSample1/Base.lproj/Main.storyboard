@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SlackSample1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="977-UI-efd">
+                                <rect key="frame" x="273" y="20" width="86" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="Jl8-7G-Pdx"/>
+                                    <constraint firstAttribute="height" constant="71" id="fhV-a8-dCF"/>
+                                </constraints>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="jaH-uw-8rS" kind="show" id="pGO-de-9pF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eunji's First SlackUI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1h-L9-DPl">
+                                <rect key="frame" x="16" y="626" width="148.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Email Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuT-VB-XE2">
+                                <rect key="frame" x="16" y="241" width="147" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="youradrress.slack.co.kr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CkO-ck-Zd6">
+                                <rect key="frame" x="16" y="274" width="178" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vPw-pv-xb3">
+                                <rect key="frame" x="16" y="274" width="343" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="C0z-ng-7LT"/>
+                                    <constraint firstAttribute="height" constant="29" id="RLh-QC-KcN"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CkO-ck-Zd6" firstAttribute="height" secondItem="vPw-pv-xb3" secondAttribute="height" id="2K5-aw-SZl"/>
+                            <constraint firstItem="CkO-ck-Zd6" firstAttribute="top" secondItem="zuT-VB-XE2" secondAttribute="bottom" constant="12" id="3NO-uD-8Fa"/>
+                            <constraint firstItem="d1h-L9-DPl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Cli-8E-Kgk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="977-UI-efd" secondAttribute="trailing" constant="16" id="VSv-FD-4Ll"/>
+                            <constraint firstItem="zuT-VB-XE2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="221" id="XFG-1z-X7i"/>
+                            <constraint firstItem="977-UI-efd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bdR-0I-NQq"/>
+                            <constraint firstItem="CkO-ck-Zd6" firstAttribute="leading" secondItem="vPw-pv-xb3" secondAttribute="leading" id="dTx-Rf-lcn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d1h-L9-DPl" secondAttribute="bottom" constant="20" id="eKw-sp-nay"/>
+                            <constraint firstItem="CkO-ck-Zd6" firstAttribute="centerY" secondItem="vPw-pv-xb3" secondAttribute="centerY" id="k5I-sQ-6tL"/>
+                            <constraint firstItem="vPw-pv-xb3" firstAttribute="top" secondItem="zuT-VB-XE2" secondAttribute="bottom" constant="12" id="skC-dc-pj7"/>
+                            <constraint firstItem="vPw-pv-xb3" firstAttribute="leading" secondItem="zuT-VB-XE2" secondAttribute="leading" id="u6A-Og-RNY"/>
+                            <constraint firstItem="zuT-VB-XE2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="zxO-HX-fQm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="6bx-tN-WEs">
+            <objects>
+                <viewController id="jaH-uw-8rS" customClass="SecondViewController" customModule="SlackSample1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Ql-4T-tkS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8a-Cc-mQn">
+                                <rect key="frame" x="16" y="20" width="40" height="40"/>
+                                <state key="normal" image="img0"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Email Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYU-D7-WAh">
+                                <rect key="frame" x="16" y="243" width="147" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GDI-oU-rJi">
+                                <rect key="frame" x="16" y="272" width="343" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="FL8-Nn-d0j"/>
+                                    <constraint firstAttribute="height" constant="25" id="gmg-50-lcH"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="youradrress.slack.co.kr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjU-6r-0Cd">
+                                <rect key="frame" x="16" y="272" width="178" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JjU-6r-0Cd" firstAttribute="centerY" secondItem="GDI-oU-rJi" secondAttribute="centerY" id="Geh-M2-jbp"/>
+                            <constraint firstItem="i8a-Cc-mQn" firstAttribute="top" secondItem="SSk-7E-AUg" secondAttribute="top" id="J3V-x0-Xmw"/>
+                            <constraint firstItem="JjU-6r-0Cd" firstAttribute="height" secondItem="GDI-oU-rJi" secondAttribute="height" id="Lwm-3W-dq0"/>
+                            <constraint firstItem="MYU-D7-WAh" firstAttribute="leading" secondItem="SSk-7E-AUg" secondAttribute="leading" constant="16" id="Y9i-zS-fwJ"/>
+                            <constraint firstItem="i8a-Cc-mQn" firstAttribute="leading" secondItem="SSk-7E-AUg" secondAttribute="leading" constant="16" id="aB2-xv-1W7"/>
+                            <constraint firstItem="GDI-oU-rJi" firstAttribute="top" secondItem="MYU-D7-WAh" secondAttribute="bottom" constant="8" id="ebg-YO-aMi"/>
+                            <constraint firstItem="MYU-D7-WAh" firstAttribute="top" secondItem="i8a-Cc-mQn" secondAttribute="bottom" constant="183" id="eoY-nX-PvH"/>
+                            <constraint firstItem="JjU-6r-0Cd" firstAttribute="leading" secondItem="MYU-D7-WAh" secondAttribute="leading" id="hMI-cb-OC9"/>
+                            <constraint firstItem="GDI-oU-rJi" firstAttribute="leading" secondItem="MYU-D7-WAh" secondAttribute="leading" id="hjA-n8-32A"/>
+                            <constraint firstItem="JjU-6r-0Cd" firstAttribute="top" secondItem="MYU-D7-WAh" secondAttribute="bottom" constant="8" id="vE8-7E-f79"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SSk-7E-AUg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ogJ-fx-ATk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1032.8" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="img0" width="40" height="40"/>
+    </resources>
+</document>

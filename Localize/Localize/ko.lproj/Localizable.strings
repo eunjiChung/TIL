@@ -1,0 +1,26 @@
+/*
+ 
+ 반드시 파일 이름을 "Localizable"으로 만든다
+ 그래야 정상적으로 읽어올 수 있음
+ 
+ 맨 처음에는 지역화가 안된 상태이므로, 직접 지역화시켜준다
+ -> 옆에 Localize 클릭
+ -> English, Korean 둘다 클릭
+ 
+ 
+ 문자열 파일은 키와 값으로 구성되어 있음
+ 
+ 
+ 
+  Localizable.strings
+  Localize
+
+  Created by CHUNGEUNJI on 2018. 2. 12..
+  Copyright © 2018년 CHUNGEUNJI. All rights reserved.
+*/
+
+
+// 키 = 값
+// 세미콜론 꼭!!!!
+"Click" = "클릭";
+"Hello" = "안녕";

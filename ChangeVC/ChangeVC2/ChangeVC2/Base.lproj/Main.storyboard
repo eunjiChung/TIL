@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J9p-pn-6Rc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChangeVC2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feM-Zj-b1Y">
+                                <rect key="frame" x="161" y="172" width="53" height="30"/>
+                                <state key="normal" title="Present"/>
+                                <connections>
+                                    <action selector="didTouchPresent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IAe-sF-qw7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjG-ky-5PO">
+                                <rect key="frame" x="170" y="247" width="35" height="30"/>
+                                <state key="normal" title="Push"/>
+                                <connections>
+                                    <action selector="didTouchPush:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5D0-Jl-qQ4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCv-hg-BTZ">
+                                <rect key="frame" x="150" y="317" width="75" height="30"/>
+                                <state key="normal" title="Push Code"/>
+                                <connections>
+                                    <action selector="didTouchPushCode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="845-S0-DBy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fjG-ky-5PO" firstAttribute="top" secondItem="feM-Zj-b1Y" secondAttribute="bottom" constant="45" id="3Wz-ht-Nhe"/>
+                            <constraint firstItem="eCv-hg-BTZ" firstAttribute="centerX" secondItem="feM-Zj-b1Y" secondAttribute="centerX" id="Ebq-tR-EvO"/>
+                            <constraint firstItem="eCv-hg-BTZ" firstAttribute="top" secondItem="fjG-ky-5PO" secondAttribute="bottom" constant="40" id="Lsw-0c-1xh"/>
+                            <constraint firstItem="fjG-ky-5PO" firstAttribute="centerX" secondItem="feM-Zj-b1Y" secondAttribute="centerX" id="d8p-Kc-yB2"/>
+                            <constraint firstItem="feM-Zj-b1Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uHC-pe-nlK"/>
+                            <constraint firstItem="feM-Zj-b1Y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="152" id="vUS-QZ-GaM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="AS3-qi-QZQ"/>
+                    <connections>
+                        <segue destination="cBa-2S-yIl" kind="show" identifier="showSegue" id="2HH-Kw-AfW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079.2" y="133.5832083958021"/>
+        </scene>
+        <!--Navi View Controller-->
+        <scene sceneID="DZR-31-nXs">
+            <objects>
+                <viewController storyboardIdentifier="NaviViewController" id="cBa-2S-yIl" customClass="NaviViewController" customModule="ChangeVC2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x7w-Pk-9hL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebV-4S-ln9">
+                                <rect key="frame" x="156" y="313" width="69" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
+                                <state key="normal" title="Pop"/>
+                                <connections>
+                                    <action selector="didTouchPop:" destination="cBa-2S-yIl" eventType="touchUpInside" id="Nmr-zm-1vQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.87657974599999999" blue="0.83309968940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="BPc-y6-Aq4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dqb-RK-p6e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1952" y="519"/>
+        </scene>
+        <!--Modal View Controller-->
+        <scene sceneID="BQk-P2-wcI">
+            <objects>
+                <viewController storyboardIdentifier="ModalViewController" id="i07-dk-6s5" customClass="ModalViewController" customModule="ChangeVC2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kLl-Y9-5lr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dm-0T-Zo1">
+                                <rect key="frame" x="142" y="313" width="105" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <state key="normal" title="Modal"/>
+                                <connections>
+                                    <action selector="didTouchModal:" destination="i07-dk-6s5" eventType="touchUpInside" id="jd5-cp-YjB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.61801677030000002" green="1" blue="0.78916227459999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="DqD-2j-8Vf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qNO-dN-rn1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1975" y="-166"/>
+        </scene>
+        <!--Push View Controller-->
+        <scene sceneID="065-0a-XEA">
+            <objects>
+                <viewController storyboardIdentifier="PushViewController" id="GqK-H2-SvY" customClass="PushViewController" customModule="ChangeVC2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uxx-K4-1A8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1S-1h-psQ">
+                                <rect key="frame" x="156" y="314" width="70" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <state key="normal" title="Pop"/>
+                                <connections>
+                                    <action selector="didTouchPop:" destination="GqK-H2-SvY" eventType="touchUpInside" id="16s-xl-yJu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="vGH-qd-VcB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mKZ-Ae-OsL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2660" y="519"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NfD-wK-vah">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="J9p-pn-6Rc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hDE-Vb-QMl">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7va-dE-oza"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EH1-2s-x1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="247" y="134"/>
+        </scene>
+    </scenes>
+</document>

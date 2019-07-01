@@ -1,0 +1,20 @@
+/*
+ 
+ 반드시 파일 이름을 "Localizable"으로 만든다
+ 그래야 정상적으로 읽어올 수 있음
+ 
+ 맨 처음에는 지역화가 안된 상태이므로, 직접 지역화시켜준다
+ -> 옆에 Localize 클릭
+ 
+  Localizable.strings
+  Localize
+
+  Created by CHUNGEUNJI on 2018. 2. 12..
+  Copyright © 2018년 CHUNGEUNJI. All rights reserved.
+*/
+
+
+// Key = 값
+// 반드시 세미콜론을 붙여준다!!!!!!!!!!
+"Click" = "Click";
+"Hello" = "Hello";
