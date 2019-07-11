@@ -15,8 +15,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // 권한 요청
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (didAllow, Error) in
-            print(didAllow)
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (result, Error) in
+            print(result)
         }
     }
 
