@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestUIActivityVC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9P-FA-IWj">
+                                <rect key="frame" x="118.5" y="115" width="138" height="30"/>
+                                <state key="normal" title="Share Text Message"/>
+                                <connections>
+                                    <action selector="didTouchShareTextMsgButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dwG-il-Tvf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6O-OJ-TTc">
+                                <rect key="frame" x="144.5" y="181" width="86" height="30"/>
+                                <state key="normal" title="Share Image"/>
+                                <connections>
+                                    <action selector="didTouchShareImageBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u9w-cF-Kf3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="D9P-FA-IWj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4rh-AH-GAH"/>
+                            <constraint firstItem="q6O-OJ-TTc" firstAttribute="top" secondItem="D9P-FA-IWj" secondAttribute="bottom" constant="36" id="da2-iH-9Fp"/>
+                            <constraint firstItem="D9P-FA-IWj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="95" id="jYt-zH-rVr"/>
+                            <constraint firstItem="q6O-OJ-TTc" firstAttribute="centerX" secondItem="D9P-FA-IWj" secondAttribute="centerX" id="xPX-Cu-7Wf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
