@@ -12,9 +12,12 @@
 		996C685722DEFF5400DBF99E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996C685522DEFF5400DBF99E /* Main.storyboard */; };
 		996C685922DEFF5500DBF99E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 996C685822DEFF5500DBF99E /* Assets.xcassets */; };
 		996C685C22DEFF5500DBF99E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996C685A22DEFF5500DBF99E /* LaunchScreen.storyboard */; };
+		B06963DA5843AA51567F3C13 /* Pods_EJRxSwiftTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6665CA68EF84F69DCECD7F /* Pods_EJRxSwiftTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E6665CA68EF84F69DCECD7F /* Pods_EJRxSwiftTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EJRxSwiftTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52AAD586AC76920EEA433454 /* Pods-EJRxSwiftTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EJRxSwiftTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-EJRxSwiftTest/Pods-EJRxSwiftTest.release.xcconfig"; sourceTree = "<group>"; };
 		996C684E22DEFF5400DBF99E /* EJRxSwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EJRxSwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		996C685122DEFF5400DBF99E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		996C685322DEFF5400DBF99E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		996C685822DEFF5500DBF99E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		996C685B22DEFF5500DBF99E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		996C685D22DEFF5500DBF99E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C47E37D673F6AB8C4F8A0E81 /* Pods-EJRxSwiftTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EJRxSwiftTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EJRxSwiftTest/Pods-EJRxSwiftTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B06963DA5843AA51567F3C13 /* Pods_EJRxSwiftTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				996C685022DEFF5400DBF99E /* EJRxSwiftTest */,
 				996C684F22DEFF5400DBF99E /* Products */,
+				BF290CC50E734E9C8A00CC7B /* Pods */,
+				C6C439A2D3A6C7C519CC6E0C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = EJRxSwiftTest;
 			sourceTree = "<group>";
 		};
+		BF290CC50E734E9C8A00CC7B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C47E37D673F6AB8C4F8A0E81 /* Pods-EJRxSwiftTest.debug.xcconfig */,
+				52AAD586AC76920EEA433454 /* Pods-EJRxSwiftTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C6C439A2D3A6C7C519CC6E0C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E6665CA68EF84F69DCECD7F /* Pods_EJRxSwiftTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 996C686022DEFF5500DBF99E /* Build configuration list for PBXNativeTarget "EJRxSwiftTest" */;
 			buildPhases = (
+				6981E2A5C480A283F4093BCD /* [CP] Check Pods Manifest.lock */,
 				996C684A22DEFF5400DBF99E /* Sources */,
 				996C684B22DEFF5400DBF99E /* Frameworks */,
 				996C684C22DEFF5400DBF99E /* Resources */,
+				72B4528C71EF12D815F466C9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6981E2A5C480A283F4093BCD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EJRxSwiftTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72B4528C71EF12D815F466C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EJRxSwiftTest/Pods-EJRxSwiftTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EJRxSwiftTest/Pods-EJRxSwiftTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		996C684A22DEFF5400DBF99E /* Sources */ = {
@@ -280,11 +345,13 @@
 		};
 		996C686122DEFF5500DBF99E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C47E37D673F6AB8C4F8A0E81 /* Pods-EJRxSwiftTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 88356WAKJ6;
 				INFOPLIST_FILE = EJRxSwiftTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -298,11 +365,13 @@
 		};
 		996C686222DEFF5500DBF99E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52AAD586AC76920EEA433454 /* Pods-EJRxSwiftTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 88356WAKJ6;
 				INFOPLIST_FILE = EJRxSwiftTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,0 +1,6 @@
+framework module Pods_EJRxSwiftTest {
+  umbrella header "Pods-EJRxSwiftTest-umbrella.h"
+
+  export *
+  module * { export * }
+}
