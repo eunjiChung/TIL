@@ -9,17 +9,18 @@
 import Foundation
 
 protocol PlayerScoreboardMoveEditorViewModel {
-    // Instance와 수행될 method를 넣는다
     var playerName: String { get }
     
-    var onePointMoveCount: String { get }
-    var twoPointMoveCount: String { get }
-    var assistMoveCount: String { get }
-    var reboundMoveCount: String { get }
-    var foulMoveCount: String { get }
+    // 변경되는 프로퍼티들을 동적인 타입으로 바꿔준다
+    // 얘는 var, 구현부는 let - 왜...? 왜 얘는 var?
+    var onePointMoveCount: Dynamic<String> { get }
+    var twoPointMoveCount: Dynamic<String> { get }
+    var assistMoveCount: Dynamic<String> { get }
+    var reboundMoveCount: Dynamic<String> { get }
+    var foulMoveCount: Dynamic<String> { get }
     
     func onePointMove()
-    func twoPointsMove()
+    func twoPointMove()
     func assistMove()
     func reboundMove()
     func foulMove()

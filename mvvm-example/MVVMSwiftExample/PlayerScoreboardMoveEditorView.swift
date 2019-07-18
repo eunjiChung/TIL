@@ -25,7 +25,7 @@ class PlayerScoreboardMoveEditorView: UIView {
     
     fileprivate weak var playerNibView: UIView!
     
-    var viewModel: PlayerScoreboardMoveEditorViewModel? {
+    var viewModel : PlayerScoreboardMoveEditorViewModel? {
         didSet {
             fillUI()
         }
@@ -47,25 +47,24 @@ class PlayerScoreboardMoveEditorView: UIView {
     }
     
     // MARK: Button Action
-    
     @IBAction func onePointAction(_ sender: Any) {
-
+        viewModel?.onePointMove()
     }
     
     @IBAction func twoPointsAction(_ sender: Any) {
-    
+        viewModel?.twoPointMove()
     }
     
     @IBAction func assistAction(_ sender: Any) {
-        
+        viewModel?.assistMove()
     }
     
     @IBAction func reboundAction(_ sender: Any) {
-    
+        viewModel?.reboundMove()
     }
     
     @IBAction func foulAction(_ sender: Any) {
-    
+        viewModel?.foulMove()
     }
     
     // MARK: Private
@@ -86,7 +85,7 @@ class PlayerScoreboardMoveEditorView: UIView {
     }
     
     fileprivate func styleActionButton(_ button: UIButton) {
-        button.setTitleColor(UIColor.scoreColor, for: UIControlState())
+        button.setTitleColor(UIColor.scoreColor, for: UIControl.State())
         button.layer.cornerRadius = button.bounds.size.width / 2.0
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor.brightPlayerBackgroundColor.cgColor
@@ -94,17 +93,19 @@ class PlayerScoreboardMoveEditorView: UIView {
     }
     
     fileprivate func fillUI() {
-        guard let viewModel = viewModel else {
-            return
-        }
+        // viewController가 아니라 view 그 자체이기 때문에
+        // isViewLoaded로 판별하진 않는다
+        // 근데 viewController나 view나 같은 코드를 써도 되나?
+        guard let viewModel = viewModel else { return }
         
-        self.name.text = viewModel.playerName
+        // 왜 unowned를 하지...? ARC 때문인건 알겠다만..
+        viewModel.onePointMoveCount.bindAndFire { [unowned self]  in self.onePointCountLabel.text = $0 }
+        viewModel.twoPointMoveCount.bindAndFire { [unowned self] in self.twoPointCountLabel.text = $0  }
+        viewModel.assistMoveCount.bindAndFire { [unowned self] in self.assistCountLabel.text = $0  }
+        viewModel.reboundMoveCount.bindAndFire { [unowned self] in self.reboundCountLabel.text = $0  }
+        viewModel.foulMoveCount.bindAndFire { [unowned self] in self.foulCountLabel.text = $0  }
         
-        self.onePointCountLabel.text = viewModel.onePointMoveCount
-        self.twoPointCountLabel.text = viewModel.twoPointMoveCount
-        self.assistCountLabel.text = viewModel.assistMoveCount
-        self.reboundCountLabel.text = viewModel.reboundMoveCount
-        self.foulCountLabel.text = viewModel.foulMoveCount
+        name.text = viewModel.playerName
     }
     
 }

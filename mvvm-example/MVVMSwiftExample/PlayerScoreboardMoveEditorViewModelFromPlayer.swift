@@ -9,24 +9,26 @@
 import Foundation
 
 
-class PlayerScoreboardMoveEditorViewModelFromPlayer: NSObject, PlayerScoreboardMoveEditorViewModel {
+class PlayerScoreboardMoveEditorViewModelFromPlayer : NSObject, PlayerScoreboardMoveEditorViewModel {
     
-    fileprivate let player: Player
+    // MARK: - Instance
     fileprivate let game: Game
+    fileprivate let player: Player
     
+    // MARK: - PlayerScoreboardMoveEditorViewModelFromPlayer Protocol
     var playerName: String
     
-    var onePointMoveCount: String
-    var twoPointMoveCount: String
-    var assistMoveCount: String
-    var reboundMoveCount: String
-    var foulMoveCount: String
+    let onePointMoveCount: Dynamic<String>
+    let twoPointMoveCount: Dynamic<String>
+    let assistMoveCount: Dynamic<String>
+    let reboundMoveCount: Dynamic<String>
+    let foulMoveCount: Dynamic<String>
     
     func onePointMove() {
         makeMove(.onePoint)
     }
     
-    func twoPointsMove() {
+    func twoPointMove() {
         makeMove(.twoPoints)
     }
     
@@ -42,29 +44,33 @@ class PlayerScoreboardMoveEditorViewModelFromPlayer: NSObject, PlayerScoreboardM
         makeMove(.foul)
     }
     
-    // MARK: - Init
-    // View Model 생성자에서는 Model을 받아와서 초기화해준다
-    init(withGame game: Game, player: Player) {
+    // MARK: - Initialize
+    init(withGame game:Game, player:Player) {
         self.game = game
         self.player = player
         
         self.playerName = player.name
-        self.onePointMoveCount = "\(game.playerMoveCount(for: player, move: .onePoint))"
-        self.twoPointMoveCount = "\(game.playerMoveCount(for: player, move: .twoPoints))"
-        self.assistMoveCount = "\(game.playerMoveCount(for: player, move: .assist))"
-        self.reboundMoveCount = "\(game.playerMoveCount(for: player, move: .rebound))"
-        self.foulMoveCount = "\(game.playerMoveCount(for: player, move: .foul))"
+        self.onePointMoveCount = Dynamic("\(game.playerMoveCount(for: player, move: .onePoint))")
+        self.twoPointMoveCount = Dynamic("\(game.playerMoveCount(for: player, move: .twoPoints))")
+        self.assistMoveCount = Dynamic("\(game.playerMoveCount(for: player, move: .assist))")
+        self.reboundMoveCount = Dynamic("\(game.playerMoveCount(for: player, move: .rebound))")
+        self.foulMoveCount = Dynamic("\(game.playerMoveCount(for: player, move: .foul))")
     }
     
     // MARK: - Private
-    
+    // PlayerInGameMove: Game에 있는 enum 타입 -> Global도 아닌데 어디에 선언하든 상관없는건가?
     fileprivate func makeMove(_ move: PlayerInGameMove) {
         game.addPlayerMove(move, for: player)
         
-        onePointMoveCount = "\(game.playerMoveCount(for: player, move: .onePoint))"
-        twoPointMoveCount = "\(game.playerMoveCount(for: player, move: .twoPoints))"
-        assistMoveCount = "\(game.playerMoveCount(for: player, move: .assist))"
-        reboundMoveCount = "\(game.playerMoveCount(for: player, move: .rebound))"
-        foulMoveCount = "\(game.playerMoveCount(for: player, move: .foul))"
+        // 프로퍼티들이 Dynamic 타입이고,
+        // Dynamic 타입 안에 value가 있기 때문에
+        // 프로퍼티들도 value를 쓸 수 있다....
+        onePointMoveCount.value = "\(game.playerMoveCount(for: player, move: .onePoint))"
+        twoPointMoveCount.value = "\(game.playerMoveCount(for: player, move: .twoPoints))"
+        assistMoveCount.value = "\(game.playerMoveCount(for: player, move: .assist))"
+        reboundMoveCount.value = "\(game.playerMoveCount(for: player, move: .rebound))"
+        foulMoveCount.value = "\(game.playerMoveCount(for: player, move: .foul))"
     }
+    
+    
 }

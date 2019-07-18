@@ -93,6 +93,7 @@ class Game: NSObject {
         moveHistory.append((move: move, player: player))
     }
     
+    // 스코어가 업데이트 됐을 때 그 정보가 viewModel까지 전달되지 않음...
     fileprivate func updateScore(_ score: UInt, withScoringPlayer player: Player) {
         if isFinished || score == 0 {
             return
@@ -109,6 +110,7 @@ class Game: NSObject {
             isFinished = true
         }
         
+        // GameScoreViewModel에 업데이트 됨을 noti 보냄
         NotificationCenter.default.post(name: Notification.Name(rawValue: GameNotifications.GameScoreDidChangeNotification), object: self)
     }
     

@@ -27,11 +27,11 @@
 		11BCCCEA1D97CABA008DB25F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BCCCE11D97CABA008DB25F /* Team.swift */; };
 		11BCCCEB1D97CABA008DB25F /* UIStoryboard+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BCCCE21D97CABA008DB25F /* UIStoryboard+Loader.swift */; };
 		11E21EAF1DA4106400380E3C /* NSTimer+Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E21EAE1DA4106400380E3C /* NSTimer+Closure.swift */; };
-		722EEA6F22DF8255002684AC /* GameScoreboardEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722EEA6E22DF8255002684AC /* GameScoreboardEditorViewModel.swift */; };
-		722EEA7122DF82E8002684AC /* GameScoreboardEditorViewModelFromGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722EEA7022DF82E8002684AC /* GameScoreboardEditorViewModelFromGame.swift */; };
-		722EEA7322DF864B002684AC /* PlayerScoreboardMoveEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722EEA7222DF864B002684AC /* PlayerScoreboardMoveEditorViewModel.swift */; };
-		722EEA7522DF86A8002684AC /* PlayerScoreboardMoveEditorViewModelFromPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722EEA7422DF86A8002684AC /* PlayerScoreboardMoveEditorViewModelFromPlayer.swift */; };
-		722EEA7722DF897B002684AC /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722EEA7622DF897B002684AC /* Dynamic.swift */; };
+		727706BD22E0A15100990D5B /* GameScoreboardEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727706BC22E0A15100990D5B /* GameScoreboardEditorViewModel.swift */; };
+		727706BF22E0A32500990D5B /* GameScoreboardEditorViewModelFromGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727706BE22E0A32500990D5B /* GameScoreboardEditorViewModelFromGame.swift */; };
+		727706C322E0AD9200990D5B /* PlayerScoreboardMoveEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727706C222E0AD9200990D5B /* PlayerScoreboardMoveEditorViewModel.swift */; };
+		727706C522E0AECB00990D5B /* PlayerScoreboardMoveEditorViewModelFromPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727706C422E0AECB00990D5B /* PlayerScoreboardMoveEditorViewModelFromPlayer.swift */; };
+		727706C722E0CB1700990D5B /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727706C622E0CB1700990D5B /* Dynamic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,11 +78,11 @@
 		11BCCCE11D97CABA008DB25F /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		11BCCCE21D97CABA008DB25F /* UIStoryboard+Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Loader.swift"; sourceTree = "<group>"; };
 		11E21EAE1DA4106400380E3C /* NSTimer+Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTimer+Closure.swift"; sourceTree = "<group>"; };
-		722EEA6E22DF8255002684AC /* GameScoreboardEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScoreboardEditorViewModel.swift; sourceTree = "<group>"; };
-		722EEA7022DF82E8002684AC /* GameScoreboardEditorViewModelFromGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScoreboardEditorViewModelFromGame.swift; sourceTree = "<group>"; };
-		722EEA7222DF864B002684AC /* PlayerScoreboardMoveEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScoreboardMoveEditorViewModel.swift; sourceTree = "<group>"; };
-		722EEA7422DF86A8002684AC /* PlayerScoreboardMoveEditorViewModelFromPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScoreboardMoveEditorViewModelFromPlayer.swift; sourceTree = "<group>"; };
-		722EEA7622DF897B002684AC /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		727706BC22E0A15100990D5B /* GameScoreboardEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScoreboardEditorViewModel.swift; sourceTree = "<group>"; };
+		727706BE22E0A32500990D5B /* GameScoreboardEditorViewModelFromGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScoreboardEditorViewModelFromGame.swift; sourceTree = "<group>"; };
+		727706C222E0AD9200990D5B /* PlayerScoreboardMoveEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScoreboardMoveEditorViewModel.swift; sourceTree = "<group>"; };
+		727706C422E0AECB00990D5B /* PlayerScoreboardMoveEditorViewModelFromPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScoreboardMoveEditorViewModelFromPlayer.swift; sourceTree = "<group>"; };
+		727706C622E0CB1700990D5B /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,13 +218,29 @@
 		11F768761D99050600F159D2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				722EEA6E22DF8255002684AC /* GameScoreboardEditorViewModel.swift */,
-				722EEA7022DF82E8002684AC /* GameScoreboardEditorViewModelFromGame.swift */,
-				722EEA7222DF864B002684AC /* PlayerScoreboardMoveEditorViewModel.swift */,
-				722EEA7422DF86A8002684AC /* PlayerScoreboardMoveEditorViewModelFromPlayer.swift */,
-				722EEA7622DF897B002684AC /* Dynamic.swift */,
+				727706C622E0CB1700990D5B /* Dynamic.swift */,
+				727706C022E0AD5600990D5B /* GameScoar */,
+				727706C122E0AD6100990D5B /* Player */,
 			);
 			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		727706C022E0AD5600990D5B /* GameScoar */ = {
+			isa = PBXGroup;
+			children = (
+				727706BC22E0A15100990D5B /* GameScoreboardEditorViewModel.swift */,
+				727706BE22E0A32500990D5B /* GameScoreboardEditorViewModelFromGame.swift */,
+			);
+			name = GameScoar;
+			sourceTree = "<group>";
+		};
+		727706C122E0AD6100990D5B /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				727706C222E0AD9200990D5B /* PlayerScoreboardMoveEditorViewModel.swift */,
+				727706C422E0AECB00990D5B /* PlayerScoreboardMoveEditorViewModelFromPlayer.swift */,
+			);
+			name = Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,20 +385,20 @@
 				118C387E1D9B0A180006396D /* UIColor+Theme.swift in Sources */,
 				118C38741D99B7760006396D /* PlayerScoreboardMoveEditorView.swift in Sources */,
 				11BCCCEB1D97CABA008DB25F /* UIStoryboard+Loader.swift in Sources */,
-				722EEA7122DF82E8002684AC /* GameScoreboardEditorViewModelFromGame.swift in Sources */,
+				727706BF22E0A32500990D5B /* GameScoreboardEditorViewModelFromGame.swift in Sources */,
 				11BCCCAF1D97CA2C008DB25F /* HomeViewController.swift in Sources */,
 				118C38781D99B9F10006396D /* UINib+Loader.swift in Sources */,
-				722EEA7322DF864B002684AC /* PlayerScoreboardMoveEditorViewModel.swift in Sources */,
+				727706C322E0AD9200990D5B /* PlayerScoreboardMoveEditorViewModel.swift in Sources */,
 				11BCCCE81D97CABA008DB25F /* Player.swift in Sources */,
 				11E21EAF1DA4106400380E3C /* NSTimer+Closure.swift in Sources */,
-				722EEA7722DF897B002684AC /* Dynamic.swift in Sources */,
+				727706C722E0CB1700990D5B /* Dynamic.swift in Sources */,
 				11BCCCAD1D97CA2C008DB25F /* AppDelegate.swift in Sources */,
-				722EEA7522DF86A8002684AC /* PlayerScoreboardMoveEditorViewModelFromPlayer.swift in Sources */,
+				727706C522E0AECB00990D5B /* PlayerScoreboardMoveEditorViewModelFromPlayer.swift in Sources */,
 				11BCCCEA1D97CABA008DB25F /* Team.swift in Sources */,
 				11BCCCE41D97CABA008DB25F /* Game.swift in Sources */,
 				118C387A1D99C1E70006396D /* UIViewController+Subview.swift in Sources */,
 				11615D0D1D97F5C600A007D2 /* GameScoreboardEditorViewController.swift in Sources */,
-				722EEA6F22DF8255002684AC /* GameScoreboardEditorViewModel.swift in Sources */,
+				727706BD22E0A15100990D5B /* GameScoreboardEditorViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,7 +545,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toptal.MVVMSwiftExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -542,7 +558,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toptal.MVVMSwiftExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

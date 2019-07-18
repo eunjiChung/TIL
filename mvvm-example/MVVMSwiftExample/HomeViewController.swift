@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
     }
     
     // MARK: Private
+    
     fileprivate func showGameScoreboardEditorViewController() {
         if !self.isViewLoaded {
             return
@@ -35,6 +36,7 @@ class HomeViewController: UIViewController {
         if let game = gameLibrary.allGames().first {
             
             let controller = UIStoryboard.loadGameScoreboardEditorViewController()
+            
             let viewModel = GameScoreboardEditorViewModelFromGame(withGame: game)
             controller.viewModel = viewModel
             
