@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pgM-re-d8z">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UserDefaultTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wcv-Aq-zCQ">
+                                <rect key="frame" x="146.5" y="433" width="121" height="30"/>
+                                <state key="normal" title="누르면 다음화면으로"/>
+                                <connections>
+                                    <segue destination="1So-Ww-UsS" kind="show" id="7qa-BL-aCD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Wcv-Aq-zCQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H3U-2T-Vnk"/>
+                            <constraint firstItem="Wcv-Aq-zCQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Uba-qb-Q7X"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Nc7-rt-5nA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="138.61607142857142"/>
+        </scene>
+        <!--Switch View Controller-->
+        <scene sceneID="0gM-LR-JJk">
+            <objects>
+                <viewController storyboardIdentifier="SwitchViewController" id="1So-Ww-UsS" customClass="SwitchViewController" customModule="UserDefaultTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n2E-lK-x5g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IIf-XR-uLu">
+                                <rect key="frame" x="182.5" y="258" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchAction:" destination="1So-Ww-UsS" eventType="valueChanged" id="uWT-fJ-dqe"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스위치 테스트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iw-BN-SYC">
+                                <rect key="frame" x="160.5" y="318" width="93" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IIf-XR-uLu" firstAttribute="top" secondItem="tpe-NV-Qlc" secondAttribute="top" constant="170" id="0et-3W-F3G"/>
+                            <constraint firstItem="IIf-XR-uLu" firstAttribute="centerX" secondItem="n2E-lK-x5g" secondAttribute="centerX" id="CwT-G8-6Rx"/>
+                            <constraint firstItem="7iw-BN-SYC" firstAttribute="centerX" secondItem="IIf-XR-uLu" secondAttribute="centerX" id="O4b-Cw-u4a"/>
+                            <constraint firstItem="7iw-BN-SYC" firstAttribute="top" secondItem="IIf-XR-uLu" secondAttribute="bottom" constant="29" id="vYx-M5-HWK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tpe-NV-Qlc"/>
+                    </view>
+                    <connections>
+                        <outlet property="TestSwitch" destination="IIf-XR-uLu" id="clq-DE-gkg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PGa-gl-PvE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1913.0434782608697" y="138.61607142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jeI-F7-m2z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pgM-re-d8z" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pGb-fN-ND0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yx2-kP-6oH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r94-YO-bEw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="214" y="139"/>
+        </scene>
+    </scenes>
+</document>
