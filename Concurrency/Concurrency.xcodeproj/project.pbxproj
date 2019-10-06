@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15C513D756CA3EB4B49D6067 /* Pods_Concurrency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E38FBC0A9691BFFF32D8D7 /* Pods_Concurrency.framework */; };
 		9989AD4922E42CC7005F05E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989AD4822E42CC7005F05E8 /* AppDelegate.swift */; };
 		9989AD4B22E42CC7005F05E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989AD4A22E42CC7005F05E8 /* ViewController.swift */; };
 		9989AD4E22E42CC7005F05E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9989AD4C22E42CC7005F05E8 /* Main.storyboard */; };
@@ -22,6 +23,9 @@
 		9989AD4F22E42CC8005F05E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9989AD5222E42CC8005F05E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9989AD5422E42CC8005F05E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99E38FBC0A9691BFFF32D8D7 /* Pods_Concurrency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Concurrency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A766BFFD931E1529C2BD5068 /* Pods-Concurrency.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Concurrency.release.xcconfig"; path = "Target Support Files/Pods-Concurrency/Pods-Concurrency.release.xcconfig"; sourceTree = "<group>"; };
+		BE36548D329FEE187FB391C0 /* Pods-Concurrency.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Concurrency.debug.xcconfig"; path = "Target Support Files/Pods-Concurrency/Pods-Concurrency.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15C513D756CA3EB4B49D6067 /* Pods_Concurrency.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3353410C6D61BF006B1B6D20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99E38FBC0A9691BFFF32D8D7 /* Pods_Concurrency.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9989AD3C22E42CC7005F05E8 = {
 			isa = PBXGroup;
 			children = (
 				9989AD4722E42CC7005F05E8 /* Concurrency */,
 				9989AD4622E42CC7005F05E8 /* Products */,
+				BA8625E43F9A1D662FA0DA6A /* Pods */,
+				3353410C6D61BF006B1B6D20 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,16 @@
 			path = Concurrency;
 			sourceTree = "<group>";
 		};
+		BA8625E43F9A1D662FA0DA6A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE36548D329FEE187FB391C0 /* Pods-Concurrency.debug.xcconfig */,
+				A766BFFD931E1529C2BD5068 /* Pods-Concurrency.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9989AD5722E42CC8005F05E8 /* Build configuration list for PBXNativeTarget "Concurrency" */;
 			buildPhases = (
+				790940564348F6489956BCAC /* [CP] Check Pods Manifest.lock */,
 				9989AD4122E42CC7005F05E8 /* Sources */,
 				9989AD4222E42CC7005F05E8 /* Frameworks */,
 				9989AD4322E42CC7005F05E8 /* Resources */,
+				25F56364F93A5D25E9FEB391 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25F56364F93A5D25E9FEB391 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Concurrency/Pods-Concurrency-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Concurrency/Pods-Concurrency-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Concurrency/Pods-Concurrency-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		790940564348F6489956BCAC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Concurrency-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9989AD4122E42CC7005F05E8 /* Sources */ = {
@@ -280,6 +349,7 @@
 		};
 		9989AD5822E42CC8005F05E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE36548D329FEE187FB391C0 /* Pods-Concurrency.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +368,7 @@
 		};
 		9989AD5922E42CC8005F05E8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A766BFFD931E1529C2BD5068 /* Pods-Concurrency.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
