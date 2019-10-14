@@ -17,6 +17,8 @@
 		722A684D234A23E800A085B3 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 722A684C234A23E800A085B3 /* RemoteConfigDefaults.plist */; };
 		722A684F234A26A700A085B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A684E234A26A700A085B3 /* LoginViewController.swift */; };
 		722A6851234A2A7E00A085B3 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A6850234A2A7E00A085B3 /* SignupViewController.swift */; };
+		72D8E2DF2354C1EF00062371 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D8E2DE2354C1EF00062371 /* PeopleViewController.swift */; };
+		72D8E2E12354C87A00062371 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D8E2E02354C87A00062371 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		722A684C234A23E800A085B3 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		722A684E234A26A700A085B3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		722A6850234A2A7E00A085B3 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		72D8E2DE2354C1EF00062371 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		72D8E2E02354C87A00062371 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		A450F762615DA214280EB43D /* Pods-HowlTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HowlTalk.debug.xcconfig"; path = "Target Support Files/Pods-HowlTalk/Pods-HowlTalk.debug.xcconfig"; sourceTree = "<group>"; };
 		DE6559DB5BB8CE013308D718 /* Pods_HowlTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HowlTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -87,6 +91,8 @@
 				722A684C234A23E800A085B3 /* RemoteConfigDefaults.plist */,
 				722A684E234A26A700A085B3 /* LoginViewController.swift */,
 				722A6850234A2A7E00A085B3 /* SignupViewController.swift */,
+				72D8E2DE2354C1EF00062371 /* PeopleViewController.swift */,
+				72D8E2E02354C87A00062371 /* UserModel.swift */,
 			);
 			path = HowlTalk;
 			sourceTree = "<group>";
@@ -221,6 +227,8 @@
 				722A6839234A1E3500A085B3 /* ViewController.swift in Sources */,
 				722A6851234A2A7E00A085B3 /* SignupViewController.swift in Sources */,
 				722A6837234A1E3500A085B3 /* AppDelegate.swift in Sources */,
+				72D8E2E12354C87A00062371 /* UserModel.swift in Sources */,
+				72D8E2DF2354C1EF00062371 /* PeopleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

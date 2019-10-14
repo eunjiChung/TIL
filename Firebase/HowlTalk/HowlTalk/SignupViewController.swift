@@ -52,23 +52,45 @@ class SignupViewController: UIViewController {
     }
     
     @objc func signupEvent() {
-        // Firebase Auth 과정을 따로 배워야한다...!
+        // 사용자를 만들고 등록하는 과정
         Auth.auth().createUser(withEmail: emailTextField.text!, password: pwdTextField.text!) { (result, error) in
-            
-            if let result = result {
-                let uid = result.user.uid
-                print("uid : \(uid)")
-                
-                guard let image = self.imageview.image?.jpegData(compressionQuality: 0.75) else { return }
-                
-                self.storage_ref.child("users").child(uid).putData(image, metadata: nil, completion: { (data, error) in
-                    let imageUrl = data.
-                })
-                self.ref.child("users").child(uid).setValue(["userName":self.nameTextField.text])
-            }
-            
             if let error = error {
                 print("Error : \(error.localizedDescription)")
+                return
+            }
+            
+            // 사용자의 uid를 가져옴
+            if let result = result {
+                let uid = result.user.uid
+                
+                // 이미지 뷰의 이미지를 data로 만듦
+                guard let image = self.imageview.image else { return }
+                guard let data = image.jpegData(compressionQuality: 0.75) else { return }
+                
+                // storage의 어느 위치(?)에 넣어줄지 정함
+                let storageRef = self.storage_ref.child("users").child(uid)
+                // 해당 위치에 생성한 data를 넣어줌 (metaData는 무엇...?)
+                storageRef.putData(data, metadata: nil, completion: { (metaData, error) in
+                    if let error = error {
+                        return
+                    }
+                    
+                    // 해당 위치의 이미지 url을 다운로드한다
+                    storageRef.downloadURL(completion: { (url, error) in
+                        if let error = error {
+                            return
+                        }
+                        
+                        guard let downloadURL = url else {
+                            return
+                        }
+                        
+                        // 이 정보를 users의 DB에 넣어줌
+                        self.ref.child("users").child(uid).setValue(["userName": self.nameTextField.text!,
+                                                                     "profileImageUrl": downloadURL.absoluteString
+                            ])
+                    })
+                })
             }
         }
         
