@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
     
     let remoteConfig = RemoteConfig.remoteConfig()
     var color: String!
+    var handle: AuthStateDidChangeListenerHandle?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,14 +43,24 @@ class LoginViewController: UIViewController {
 
         signinButton.addTarget(self, action: #selector(presentSignup), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginEvent), for: .touchUpInside)
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         // 다음 화면으로 넘어가는 코드
-        Auth.auth().addStateDidChangeListener { (auth, user) in
-            if let user = user {
+        // handle 변수로 removeStateDidChangeListener까지 통제해줘야 다른 화면에서 User가 안불린다?
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            print("User State DID Changed")
+            if user != nil {
+                print("User: \(user)")
                 let view = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
                 self.present(view, animated: true, completion: nil)
             }
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        // 얘를 해제시켜줘야 다른 화면에서 안불린다???
+        Auth.auth().removeStateDidChangeListener(handle!)
     }
     
     @objc func presentSignup() {
@@ -59,12 +70,12 @@ class LoginViewController: UIViewController {
     
     @objc func loginEvent() {
         Auth.auth().signIn(withEmail: emailTextField.text!, password: pwdTextField.text!) { (result, error) in
+            print("Login!!!!")
             
             if error != nil {
                 let alert = UIAlertController(title: "에러", message: error.debugDescription, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
-                
             }
         }
     }

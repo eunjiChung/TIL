@@ -58,7 +58,7 @@ class SignupViewController: UIViewController {
                 print("Error : \(error.localizedDescription)")
                 return
             }
-            
+
             // 사용자의 uid를 가져옴
             if let result = result {
                 let uid = result.user.uid
@@ -71,13 +71,15 @@ class SignupViewController: UIViewController {
                 let storageRef = self.storage_ref.child("users").child(uid)
                 // 해당 위치에 생성한 data를 넣어줌 (metaData는 무엇...?)
                 storageRef.putData(data, metadata: nil, completion: { (metaData, error) in
-                    if let error = error {
+                    if error != nil {
+                        print("This is Error \(error.debugDescription)")
                         return
                     }
                     
                     // 해당 위치의 이미지 url을 다운로드한다
-                    storageRef.downloadURL(completion: { (url, error) in
-                        if let error = error {
+                    storageRef.downloadURL(completion: { (url, storageError) in
+                        if let storageError = storageError {
+                            print("Error: \(storageError.localizedDescription)")
                             return
                         }
                         
@@ -85,10 +87,14 @@ class SignupViewController: UIViewController {
                             return
                         }
                         
+                        let values = ["userName": self.nameTextField.text!,
+                                      "profileImageUrl": downloadURL.absoluteString,
+                                      "uid" : uid]
+                        
                         // 이 정보를 users의 DB에 넣어줌
-                        self.ref.child("users").child(uid).setValue(["userName": self.nameTextField.text!,
-                                                                     "profileImageUrl": downloadURL.absoluteString
-                            ])
+                        self.ref.child("users").child(uid).setValue(values) { (error, reference) in
+                            self.cancelEvent()
+                        }
                     })
                 })
             }

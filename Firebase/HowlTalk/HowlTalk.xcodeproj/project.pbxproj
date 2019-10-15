@@ -19,6 +19,7 @@
 		722A6851234A2A7E00A085B3 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A6850234A2A7E00A085B3 /* SignupViewController.swift */; };
 		72D8E2DF2354C1EF00062371 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D8E2DE2354C1EF00062371 /* PeopleViewController.swift */; };
 		72D8E2E12354C87A00062371 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D8E2E02354C87A00062371 /* UserModel.swift */; };
+		B67446D52355AC6100CE0A8B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67446D42355AC6100CE0A8B /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		72D8E2DE2354C1EF00062371 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		72D8E2E02354C87A00062371 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		A450F762615DA214280EB43D /* Pods-HowlTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HowlTalk.debug.xcconfig"; path = "Target Support Files/Pods-HowlTalk/Pods-HowlTalk.debug.xcconfig"; sourceTree = "<group>"; };
+		B67446D42355AC6100CE0A8B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		DE6559DB5BB8CE013308D718 /* Pods_HowlTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HowlTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 				722A6850234A2A7E00A085B3 /* SignupViewController.swift */,
 				72D8E2DE2354C1EF00062371 /* PeopleViewController.swift */,
 				72D8E2E02354C87A00062371 /* UserModel.swift */,
+				B67446D42355AC6100CE0A8B /* ChatViewController.swift */,
 			);
 			path = HowlTalk;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				722A684F234A26A700A085B3 /* LoginViewController.swift in Sources */,
 				722A6839234A1E3500A085B3 /* ViewController.swift in Sources */,
 				722A6851234A2A7E00A085B3 /* SignupViewController.swift in Sources */,
+				B67446D52355AC6100CE0A8B /* ChatViewController.swift in Sources */,
 				722A6837234A1E3500A085B3 /* AppDelegate.swift in Sources */,
 				72D8E2E12354C87A00062371 /* UserModel.swift in Sources */,
 				72D8E2DF2354C1EF00062371 /* PeopleViewController.swift in Sources */,
@@ -305,7 +309,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -360,7 +364,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -378,6 +382,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 88356WAKJ6;
 				INFOPLIST_FILE = HowlTalk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -397,6 +402,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 88356WAKJ6;
 				INFOPLIST_FILE = HowlTalk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

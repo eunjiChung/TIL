@@ -11,4 +11,5 @@ import UIKit
 class UserModel: NSObject {
     var profileImageUrl: String?
     var userName: String?
+    var uid: String? // 채팅방을 사용할 때 사용할 UID
 }
