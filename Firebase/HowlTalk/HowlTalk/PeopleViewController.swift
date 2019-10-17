@@ -21,7 +21,7 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView = UITableView()
         tableView?.delegate = self
         tableView?.dataSource = self
-        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView?.register(PeopleViewTableCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView!)
         
         tableView?.snp.makeConstraints { m in
@@ -35,14 +35,22 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
             // 중복되는 데이터 제거?
             self.array.removeAll()
             
+            let myUid = Auth.auth().currentUser?.uid
+            
             for child in snapshot.children {
                 let fchild = child as! DataSnapshot
                 let userModel = UserModel()
-                print("Fchild : \(fchild.value as! [String: Any])")
                 
                 let value = fchild.value as! [String: String]
+                
                 userModel.userName = value["userName"]
                 userModel.profileImageUrl = value["profileImageUrl"]
+                userModel.uid = value["uid"]
+                
+                if userModel.uid == myUid {
+                    continue
+                }
+                
                 self.array.append(userModel)
             }
             
@@ -59,9 +67,10 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PeopleViewTableCell
         
-        let imageView = UIImageView()
+        let imageView = cell.peopleImageview
+        
         cell.addSubview(imageView)
         imageView.snp.makeConstraints { (m) in
             m.centerY.equalTo(cell)
@@ -81,7 +90,7 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
          
-        let label = UILabel()
+        let label = cell.label!
         cell.addSubview(label)
         label.snp.makeConstraints { (m) in
             m.centerY.equalTo(cell)
@@ -99,7 +108,22 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let view = self.storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as? ChatViewController
-        view?.destinationUID = self.array[indexPath.row].uid
+        view?.destinationUid = self.array[indexPath.row].uid
         self.navigationController?.pushViewController(view!, animated: true)
+    }
+}
+
+class PeopleViewTableCell: UITableViewCell {
+    var peopleImageview = UIImageView()
+    var label: UILabel! = UILabel()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.addSubview(peopleImageview)
+        self.addSubview(label)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

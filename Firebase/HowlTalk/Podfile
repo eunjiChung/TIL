@@ -4,14 +4,15 @@
 target 'HowlTalk' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
+  
   # Pods for HowlTalk
-
-    pod 'Firebase/Database'
-	pod 'Firebase/Auth'
-    pod 'Firebase/RemoteConfig'
-    pod 'Firebase/Analytics'
-    pod 'SnapKit', '~> 5.0.0'
-    pod 'TextFieldEffects'
-	pod 'Firebase/Storage'
+  
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'Firebase/RemoteConfig'
+  pod 'Firebase/Analytics'
+  pod 'SnapKit', '~> 5.0.0'
+  pod 'TextFieldEffects'
+  pod 'Firebase/Storage'
+  pod 'ObjectMapper', '~> 3.5.1'
 end
