@@ -10,7 +10,8 @@ import UIKit
 import Firebase
 
 class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var chatTextield: UITextField!
@@ -24,13 +25,53 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     let ref = Database.database().reference()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         uid = Auth.auth().currentUser?.uid // 내 uid 받아온 거
         sendButton.addTarget(self, action: #selector(createRoom), for: .touchUpInside)
+        checkChatRoom()
+        self.tabBarController?.tabBar.isHidden = true
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIWindow.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIWindow.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        if let keyboardSize = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            self.bottomConstraint.constant = keyboardSize.height
+        }
+        
+        UIView.animate(withDuration: 0, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: {
+            (complete) in
+            
+            if self.comments.count > 0 {
+                self.tableView.scrollToRow(at: IndexPath(item: self.comments.count - 1, section: 0), at: .bottom, animated: true)
+            }
+        })
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        self.bottomConstraint.constant = 20
+        self.view.layoutIfNeeded()
+    }
+    
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
     
     @objc func createRoom() {
         let createRoomInfo: Dictionary<String, Any> = [
@@ -43,10 +84,13 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if let chatRoomUID = chatRoomUid {
             let value: Dictionary<String, Any> = [
                 "uid" : uid!,
-                "message" : chatTextield.text!
+                "message" : chatTextield.text!,
+                "timestamp" : ServerValue.timestamp()
             ]
             
-            ref.child("chatrooms").child(chatRoomUID).child("comments").childByAutoId().setValue(value)
+            ref.child("chatrooms").child(chatRoomUID).child("comments").childByAutoId().setValue(value) { (error, reference) in
+                self.chatTextield.text = ""
+            }
         } else {
             self.sendButton.isEnabled = false
             // 방 생성 코드
@@ -102,6 +146,11 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
             
             self.tableView.reloadData()
+            
+            if self.comments.count > 0 {
+                self.tableView.scrollToRow(at: IndexPath(item: self.comments.count - 1, section: 0), at: .bottom, animated: true)
+            }
+            
         }
     }
     
@@ -116,13 +165,17 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let view = tableView.dequeueReusableCell(withIdentifier: "MyMessageCell", for: indexPath) as! MyMessageCell
             view.myLabelMessage.text = self.comments[indexPath.row].message
             view.myLabelMessage.numberOfLines = 0
+            
+            if let time = self.comments[indexPath.row].timeStamp {
+                view.labelTimeStamp.text = time.toDayTime
+            }
+            
             return view
         } else {
             let view = tableView.dequeueReusableCell(withIdentifier: "DestinationMessageCell", for: indexPath) as! DestinationMessageCell
             view.labelName.text = userModel?.userName
             view.labelMessage.text = self.comments[indexPath.row].message
             view.labelMessage.numberOfLines = 0
-            
             let url = URL(string: self.userModel!.profileImageUrl!)
             let task = URLSession.shared.dataTask(with: url!) { (data, reponse, error) in
                 DispatchQueue.main.async {
@@ -133,6 +186,11 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
             
             task.resume()
+            
+            if let time = self.comments[indexPath.row].timeStamp {
+                view.labelTimeStamp.text = time.toDayTime
+            }
+            
             return view
         }
         
@@ -145,9 +203,20 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
 }
 
+extension Int {
+    
+    var toDayTime: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "yyyy.MM.dd HH:mm"
+        let date = Date(timeIntervalSince1970: Double(self)/1000)
+        return dateFormatter.string(from: date)
+    }
+}
 
 class MyMessageCell: UITableViewCell {
     @IBOutlet weak var myLabelMessage: UILabel!
+    @IBOutlet weak var labelTimeStamp: UILabel!
     
     
 }
@@ -157,4 +226,5 @@ class DestinationMessageCell: UITableViewCell {
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelMessage: UILabel!
     
+    @IBOutlet weak var labelTimeStamp: UILabel!
 }

@@ -19,6 +19,7 @@
 		722A6851234A2A7E00A085B3 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A6850234A2A7E00A085B3 /* SignupViewController.swift */; };
 		72D8E2DF2354C1EF00062371 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D8E2DE2354C1EF00062371 /* PeopleViewController.swift */; };
 		72D8E2E12354C87A00062371 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D8E2E02354C87A00062371 /* UserModel.swift */; };
+		B6415C1B2359B43400188EF2 /* ChatRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6415C1A2359B43400188EF2 /* ChatRoomsViewController.swift */; };
 		B67446D52355AC6100CE0A8B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67446D42355AC6100CE0A8B /* ChatViewController.swift */; };
 		B69861DE2358440000A63499 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69861DD2358440000A63499 /* ChatModel.swift */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,7 @@
 		72D8E2DE2354C1EF00062371 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		72D8E2E02354C87A00062371 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		A450F762615DA214280EB43D /* Pods-HowlTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HowlTalk.debug.xcconfig"; path = "Target Support Files/Pods-HowlTalk/Pods-HowlTalk.debug.xcconfig"; sourceTree = "<group>"; };
+		B6415C1A2359B43400188EF2 /* ChatRoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomsViewController.swift; sourceTree = "<group>"; };
 		B67446D42355AC6100CE0A8B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		B69861DD2358440000A63499 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		DE6559DB5BB8CE013308D718 /* Pods_HowlTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HowlTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +87,7 @@
 		722A6835234A1E3500A085B3 /* HowlTalk */ = {
 			isa = PBXGroup;
 			children = (
+				B6415C192359B41300188EF2 /* TabBar */,
 				B69861DF2358535D00A63499 /* Supporting files */,
 				B69861DC235843ED00A63499 /* Model */,
 				722A6836234A1E3500A085B3 /* AppDelegate.swift */,
@@ -92,11 +95,19 @@
 				722A683A234A1E3500A085B3 /* Main.storyboard */,
 				722A684E234A26A700A085B3 /* LoginViewController.swift */,
 				722A6850234A2A7E00A085B3 /* SignupViewController.swift */,
-				72D8E2DE2354C1EF00062371 /* PeopleViewController.swift */,
 				B67446D42355AC6100CE0A8B /* ChatViewController.swift */,
 				722A6842234A1E3700A085B3 /* Info.plist */,
 			);
 			path = HowlTalk;
+			sourceTree = "<group>";
+		};
+		B6415C192359B41300188EF2 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				72D8E2DE2354C1EF00062371 /* PeopleViewController.swift */,
+				B6415C1A2359B43400188EF2 /* ChatRoomsViewController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		B69861DC235843ED00A63499 /* Model */ = {
@@ -246,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				722A684F234A26A700A085B3 /* LoginViewController.swift in Sources */,
+				B6415C1B2359B43400188EF2 /* ChatRoomsViewController.swift in Sources */,
 				722A6839234A1E3500A085B3 /* ViewController.swift in Sources */,
 				722A6851234A2A7E00A085B3 /* SignupViewController.swift in Sources */,
 				B69861DE2358440000A63499 /* ChatModel.swift in Sources */,

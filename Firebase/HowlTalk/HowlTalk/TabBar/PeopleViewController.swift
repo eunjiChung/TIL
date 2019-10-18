@@ -70,8 +70,6 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PeopleViewTableCell
         
         let imageView = cell.peopleImageview
-        
-        cell.addSubview(imageView)
         imageView.snp.makeConstraints { (m) in
             m.centerY.equalTo(cell)
             m.left.equalTo(cell).offset(10)
@@ -90,8 +88,7 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
          
-        let label = cell.label!
-        cell.addSubview(label)
+        let label = cell.label
         label.snp.makeConstraints { (m) in
             m.centerY.equalTo(cell)
             m.left.equalTo(imageView.snp.right).offset(20)
@@ -115,7 +112,7 @@ class PeopleViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
 class PeopleViewTableCell: UITableViewCell {
     var peopleImageview = UIImageView()
-    var label: UILabel! = UILabel()
+    var label = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
